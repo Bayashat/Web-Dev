@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Facebook webpage</title>
+
+  <style>
+    body {
+      background-color: rgb(240, 242, 245);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      position: relative;
+      top: 170px;
+      left: 230px;
+      width: 300px;
+    }
+
+    h2 {
+      font-family: sans-serif;
+      font-weight: 400;
+      position: absolute;
+      top: 260px;
+      left: 270px;
+      font-size: 25px;
+    }
+
+    fieldset {
+      text-align: center;
+      background-color: white;
+      position: absolute;
+      left: 845px;
+      top: 130px;
+      height: 330px;
+      width: 373px;
+      border-radius: 8px;
+      border-width: 0.1px;
+    }
+
+    #email {
+      position: absolute;
+      left: 15px;
+      top: 20px;
+      width: 350px;
+      height: 45px;
+      border-radius: 5px;
+    }
+
+    #pass {
+      position: absolute;
+      left: 15px;
+      top: 80px;
+      width: 350px;
+      height: 45px;
+      border-radius: 5px;
+    }
+
+    #log {
+      color: white;
+      background-color: rgb(24, 119, 242);
+      position: absolute;
+      top: 150px;
+      left: 17px;
+      width: 350px;
+      height: 50px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    #new_acc {
+      color: white;
+      background-color: rgb(66, 183, 42);
+      position: absolute;
+      left: 75px;
+      top: 270px;
+      width: 230px;
+      height: 50px;
+      background-color: rgb(66, 183, 42);
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #under {
+      font-family: sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      position: absolute;
+      top: 480px;
+      left: 900px;
+
+    }
+
+    .link {
+      color: rgb(24, 119, 242);
+      font-family: sans-serif;
+      position: absolute;
+      top: 330px;
+      left: 970px;
+      z-index: 1;
+    }
+
+    a:visited {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" width="400">
+  <div id="logo">
+    <h2>Connect with friends and the world<br>
+      around you on Facebook.</h2>
+  </div>
+  <div>
+    <form>
+      <fieldset>
+        <input id="email" type="email" placeholder="Email or phone number"> <br>
+        <input id="pass" type="password" placeholder="Password">
+        <input id="log" type="submit" value="Log In">
+        <input id="new_acc" type="submit" value="Create new account">
+      </fieldset>
+    </form>
+
+    <p class="link"><a
+        href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0"
+        target="_blank">Forgot password?</a></p>
+
+    <p id="under"><strong></strong><a href="https://www.facebook.com/pages/create/?ref_type=registration_form"
+        target="_blank">Create a Page</a></strong> for a celebrity, brand or business.</p>
+  </div>
+</body>
+
+</html>

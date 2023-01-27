@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<!-- HTML Forms:
+    1. Text input
+    2. Radio button
+    3. Checkbox
+    4. Submit
+    5. Select option
+    6. Textarea
+    7. Button
+    8. Label
+
+    HTML Form attributes:
+    * Value
+    * Readonly : 只读,不可写
+    * Disabled : 禁用
+    * Size
+
+    
+-->
+<head>
+    <title>Login form web page</title>
+</head>
+
+<body>
+    <a href="6(Specificity).html">Go back</a>
+
+    <h1> Login form </h1>
+    <form>
+        <fieldset>
+            <label for="">Login:</label>  <!--输入框前显示: Login: -->
+            <input type="text" readonly placeholder="Enter your login">  <!--输入形式是Text, 输入框中显示:Enter ....-->
+        </fieldset>
+        <fieldset>
+            <label for="">Email:</label>
+            <input type="email" disabled placeholder="Enter your email">
+        </fieldset>
+        <fieldset>
+            <label for="">Password:</label>
+            <input type="password" placeholder="Enter your login">
+        </fieldset>
+        <fieldset>
+            <label for="">City:</label>
+            <select name="" id="">      <!--选项: - Almty Astana -->
+                <option value="">-</option>
+                <option value="">Almaty</option>
+                <option value="">Astana</option>
+            </select>
+        </fieldset>
+        <fieldset>  
+            <label for="">Agree?:</label>   <!--checkbox 是选项框-->
+            <input type="checkbox" placeholder="Enter your login">
+        </fieldset>
+        <fieldset>
+            <label for="">Short bio:</label> <!--textarea是一大段写文本的框-->
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </fieldset>
+        <input type="submit" value="Register">  <!--直接这样写的话是个button-->
+    </form>
+
+    <input type="color">
+    <input type="datetime-local">
+
+</body>
+
+</html>

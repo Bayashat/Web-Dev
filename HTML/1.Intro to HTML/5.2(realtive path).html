@@ -1,0 +1,40 @@
+<!--                                5.2 相对路径 / Relative path      -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative path learning</title>
+</head>
+<body>
+    <!--
+        * 概念普及: 
+    - 当前文件: 当前的html网页
+    - 目标文件: 要找到的图片
+    * 相对路径: 从当前文件开始出发找目标文件的过程
+    * 相对路径分类: 
+        - 同级目录: 当前文件和目标文件在同一目录中 代码步骤: 1) <img src="目标图片.jpg">   2) <img src="./目标图片.jpg">
+        - 下级目录: 目标文件在下级目录: <img src="images/目标图片.jpg">
+        - 上级目录: 目标文件在上级目录: 
+            * 代码步骤: 1) 先出当前文件夹, 到上一级目录 -> ../      2) 此时看到目标文件直接写:  ../images/cat.jpg
+
+        "." -- 代表目前所在的目录，相对路径。
+        ".." -- 代表上一层目录，相对路径
+        "../../" -- 代表的是上一层目录的上一层目录，相对路径
+        "/" -- 代表根目录,绝对路径
+        "D:/abc/" -- 代表根目录,绝对路径
+    -->
+
+    <p>hello</p>
+    <!--        1) 同级目录: 当前文件和目标文件在同一目录中     -->
+    <img src="cat.gif" alt="Here is a cool cat">
+    <img src="./cat.gif" alt="Here is a cool cat">
+
+    <!--        2) 下级目录: 目标文件在下级目录     -->
+    <img src="images/cat.jpg" alt="Here is a cool cat">
+
+    <!--        3) 上级目录: 当前文件和目标文件在同一目录中     -->
+    <img src="../images/iron-man.ico" alt="a cool icon">
+
+</html>

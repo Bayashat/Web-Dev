@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice-2: Love form / 表单</title>
+</head>
+<body>
+    <h1>青春不常在, 抓紧谈恋爱</h1>
+    <hr>
+    <form action="">
+        昵称: <input type="text" placeholder="请输入昵称">
+        <br><br>
+
+        性别: 
+        <label><input type="radio" name="gender" checked>男</label>
+        <label><input type="radio" name="gender">女</label>
+        <br><br>
+
+        所在城市: 
+        <select>
+            <option>Astana</option>
+            <option selected>Almaty</option>
+            <option>Aktau</option>
+            <option>Kyzylorda</option>
+        </select>
+        <br><br>
+
+        婚姻状况: 
+        <label><input type="radio" name="marital_status" checked>未婚</label>
+        <label><input type="radio" name="marital_status">已婚</label>
+        <label><input type="radio" name="marital_status">保密</label>
+        <br><br>
+
+        喜欢的类型:
+        <label>
+            <input type="checkbox" checked>可爱
+        </label>
+        <label>
+            <input type="checkbox" checked>性感
+        </label>
+        <label>
+            <input type="checkbox">御姐
+        </label>
+        <label>
+            <input type="checkbox">萝莉
+        </label>
+        <label>
+            <input type="checkbox">小鲜肉
+        </label>
+        <label>
+            <input type="checkbox">大叔
+        </label>
+        <br><br>
+
+        个人介绍: <br>
+        <textarea cols="60" rows="10"></textarea>
+        <br><br>
+
+        <h3>我承诺</h3>
+        <ul>
+            <li>年满18岁, 单身</li>
+            <li>抱着严肃的态度</li>
+            <li>真诚寻找另一半</li>
+        </ul>
+        
+        <input type="checkbox">我同意所有条款
+        <br><br>
+        <!--    按钮有两种方式: input-button 和 button tag-->
+        <input type="submit" value="免费注册">
+        <button type="reset">重置</button>
+    </form>
+
+    
+</body>
+</html>

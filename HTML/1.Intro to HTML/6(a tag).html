@@ -1,0 +1,31 @@
+<!--                                6 超链接 / A tag      -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A tag learning</title>
+</head>
+<body>
+    <!--
+    * 场景: 点击之后, 从一个页面跳转到另一个页面
+    * 称呼: a标签, 超链接, 锚链接
+    * 代码: <a href="./目标网页.html" target="_blank">超链接</a>
+    * 属性: 
+        1) 属性名: href , 属性值: 目标网页的路径, 或者网址
+        2) 属性名: target, 属性值: 目标网页的打开方式
+            _self   :   默认值, 在当前窗口中跳转(覆盖原网页)
+            _blank  :   在新窗口中跳转(保留原网页)
+        3) title: 为超链接声明额外的信息, 当鼠标悬停在超链接上面时，这部分信息将以工具提示的形式显示
+    * 特点: 
+        - 双标签, 内部可以包裹内容
+        - 如果需要a标签点击之后去指定页面, 需要设置a标签的href属性          -->
+
+    <a href="https://www.google.com" target="_blank" title="这是一个跳转到谷歌搜索页面的网址">跳转到谷歌</a>
+    <a href="./1(HTML Basics).html">点我就跳到梦开始的地方</a>
+
+    <!--    当开发网站初期, 我们还不知道跳转地址的时候, href的值写 # (空链接)   -->
+    <a href="#">空链接, 不知道跳到哪里去</a>
+
+</html>

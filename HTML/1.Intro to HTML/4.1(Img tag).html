@@ -1,0 +1,32 @@
+<!--                                4.1 图片 / img tag       -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img tag learning</title>
+</head>
+<body>
+    <!--
+* 场景: 在网页中显示图片
+* 代码: <img src="", alt="">
+    
+* 特点: 
+    - 单标签
+    - img标签需要展示对应的效果, 需要借助标签的属性进行设置
+* 属性: src="images/cat.jpg" alt="cat" 
+    - src, alt 都是标签的属性名, 引号里是属性值
+    1. src : 图片的路径
+    2. alt : 替换文本
+        - 当图片加载失败时, 才显示alt的文本 
+    3. title:提示文本
+        - 当鼠标悬停时, 才显示的文本
+    4. width 和 height: 宽度和高度
+        - 如果只设置其中一个, 另一个没设置的会自动等比例缩放(此时图片不会变形)
+        - 如果同时设置了2个, 若设置不当图片可能会变形                                       -->
+
+    <img src="../images/cat.jpg" alt="cat" title="这是title属性, 鼠标悬停会显示效果" width="200", height="500">
+
+
+</html>
