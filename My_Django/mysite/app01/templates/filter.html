@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Filter</title>
+</head>
+<body>
+    {% load my_tags %}
+
+    {# 过滤器语法: 变量名|过滤器:参数 #}
+    {# 内置过滤器有 lower,upper,truncatewords:"30" 等 #}
+
+    <p>{{views_list | lower}}</p>  # 将列表里的元素都小写显示
+
+    <!-- 自定义内置过滤器
+        1. 先在templates文件夹创建my_tags.py文件, 里面填入所需做的函数
+        2. 然后还要在settings.py里的 TEMPLATES里添加新item: 
+                                                            'libraries':{
+                                                                    'my_tags':'app01.templates.my_tags',
+                                                                } 
+        3. 在 my_tags.py 文件里用装饰器定义标签函数
+        3. 在此文件的body标签的最前面导入: {% load my_tags %}
+        4. 在这里导入自定义的标签, 使用
+        -->
+    <p>最终成绩:{{score|my_filter:0.6}}</p>   <!-- 分数(100)会乘以0.6再显示: 60.0 -->
+    
+</body>
+</html>

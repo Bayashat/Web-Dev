@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>用户登录</h1>
+    <form action="/app01/login/" method="post">  <!-- 直接这样写的话, 当用户提交后会遇到csrf token的安全验证 -->
+
+        {% csrf_token %}  <!-- 所以要这样写, 是为了防跨网站攻击的 -->
+
+        <input type="text" name="user" placeholder="username">
+        <input type="password" name="pwd" placeholder="password">
+
+        <input type="submit" value="Submit"> 
+
+        <span style="color: red">{{ error_msg }}</span>
+    </form>
+</body>
+</html>

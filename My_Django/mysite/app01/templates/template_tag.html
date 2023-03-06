@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django template tag</title>
+</head>
+<body>
+    <!-- 变量是2个花括号    而语法是花括号和百分号 -->
+
+
+    {% load my_tags %}  <!-- 引入自定义标签,它其实是个方法 -->
+
+    {#                  1. 变量     #}
+    <p> {{ name }} </p>
+
+    {#                  2. 列表     #}
+    <!-- 列表的元素要通过 . 的方式获取 -->
+    <p> {{ views_list }} </p>
+    <p> {{ views_list.0 }} </p>
+
+    <!--    2.1) 循环遍历列表-->
+    <div>
+        {% for item in views_list %}
+            <span>{{ item }}</span>
+        {% endfor %}
+    </div>
+    <hr/>
+
+    {#                  3. 字典     #}
+    <!-- 字典的元素也是通过 . 的方式根据键获取 -->
+    <p> {{ views_dic }} </p>
+    <p> {{ views_dic.name }} </p>
+    <p> {{ views_dic.age }} </p>
+
+    <!--    3.1) 循环遍历字典-->
+    <div>
+        {% for item in views_dic.keys %}  <!-- 遍历的是key-->
+            <span>{{ item }}</span>
+        {% endfor %}
+    </div>
+    <ul>
+        {% for item in views_dic.values %} <!-- 遍历的是value-->
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for key,value in views_dic.items %} <!-- 遍历的是item-->
+            <li>{{ key }} = {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    {#                  4. 列表套字典     #}
+    <div>{{ data_list.0 }}</div>
+    <div>{{ data_list.0.name }}</div>
+
+    <!--    4.1) 循环遍历 列表套字典-->
+    <div>
+        {% for item in data_list %} <!-- 遍历的是item-->
+            <ul>
+                {% for dict_key, dict_value in item.items %}
+                    <li>{{dict_key}} = {{dict_value}}</li>
+                {% endfor %}
+            </ul>
+            <hr/>
+        {% endfor %}
+    </div>
+
+
+    {#                  4. if/else 语句     #}
+    <p>
+        {% if score >= 95 and score <= 100 %}
+            Excellent
+        {% elif score >= 85 and score < 95 %}
+            Good
+        {% elif score >= 60 and score < 85 %}
+            Qualified
+        {% else %}
+            Failed          
+        {% endif %}  
+    </p>
+
+    {#                  5. empty list   #}
+    {% for i in empty_list %}
+        <p>i</p>
+    {% empty %}  {# 通过这个语句判断是否为空列表 #}
+        <p>列表为空</p>
+    {% endfor %}
+
+    {#                  6. 自定义标签   #}
+    <!-- 自定义标签
+        1. 先在templates文件夹创建my_tags.py文件, 里面填入所需做的函数
+        2. 然后还要在settings.py里的 TEMPLATES里添加新item: 
+                                                            'libraries':{
+                                                                    'my_tags':'app01.templates.my_tags',
+                                                                } 
+        3. 用装饰器定义标签函数
+        3. 在此文件的body标签的最前面导入: {% load my_tags %}
+        4. 在这里导入自定义的标签, 使用
+        -->
+    <p>自定义标签: {% mul 11 22 33 %}</p>  <!-- 7986 -->
+
+    {% my_input "username_input" "UserName" %}
+ 
+</body>
+</html>
