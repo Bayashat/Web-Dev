@@ -9,6 +9,7 @@ from django.urls import reverse
 
 from storeProducts.models import Basket
 
+from django.contrib.auth.decorators import login_required
 
 
 def login(request):
@@ -40,6 +41,7 @@ def register(request):
     context = {'form': form}
     return render(request, 'users/register.html', context)
 
+@login_required
 def profile(request):
     if request.method == 'POST':
         form = UserProfileForm(instance=request.user, data = request.POST, files=request.FILES)
@@ -49,9 +51,21 @@ def profile(request):
     else:
         form = UserProfileForm(instance=request.user)
 
+    baskets = Basket.objects.filter(user=request.user)
+
+    # методы для корзины 
+    total_sum = 0
+    total_quantity = 0
+    for basket in baskets:
+        total_sum += basket.sum()
+        total_quantity += basket.quantity
+
     context = {
         "title": "Store - Профиль", 
         'form': form,
-        'baskets': Basket.objects.filter(user=request.user)}
+        'baskets': baskets,
+        'total_sum': total_sum,
+        'total_quantity': total_quantity
+    }
     return render(request, 'users/profile.html', context)
 
